@@ -1,0 +1,146 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset="utf-8"><title>Genesis Biology - Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @media print {
+      @page {
+        size: A4;
+        margin: 1cm;
+      }
+      body {
+        background-color: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .banner {
+        padding: 15px 0 !important;
+        margin-bottom: 20px !important;
+        box-shadow: none !important;
+      }
+      .container { padding: 0 !important; }
+      .form-control {
+        padding: 8px !important;
+        border: 1px solid #000 !important;
+      }
+      .btn { display: none !important; }
+    }
+    body { background-color: #f8f9fa; }
+    .banner { 
+      background: linear-gradient(135deg, #28a745, #218838);
+      padding: 25px 0;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    .banner img { 
+      height: 50px; 
+      margin-right: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .banner h1, .banner p { color: white; }
+    .container { max-width: 800px; }
+    .form-control {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #dee2e6;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+      border-color: #28a745;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .btn-success {
+      background: linear-gradient(135deg, #28a745, #218838);
+      border: none;
+    }
+    .btn-success:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="container d-flex align-items-center">
+      <img src="logo.jpg" alt="Genesis Biology Logo">
+      <div>
+        <h1 class="mb-0">Genesis Biology</h1>
+        <p class="mb-0">Excellence in NEET Preparation</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="mb-3">NEET Course Registration</h3>
+    <form id="regForm" class="mb-3">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="align-middle" style="width: 25%"><label class="form-label mb-0">Form No.</label></td>
+            <td><input class="form-control" name="form_no" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle" style="width: 25%"><label class="form-label mb-0">Full Name</label></td>
+            <td><input class="form-control" name="name" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Date of Birth</label></td>
+            <td><input class="form-control" type="date" name="dob" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Phone Number</label></td>
+            <td><input class="form-control" placeholder="+91" name="phone" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Address</label></td>
+            <td><input class="form-control" name="address" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Father's Name</label></td>
+            <td><input class="form-control" name="father" required></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Shift</label></td>
+            <td>
+              <select class="form-control" name="shift" required>
+                <option value="">Select Shift</option>
+                <option value="morning">Morning</option>
+                <option value="evening">Evening</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Payment Mode</label></td>
+            <td>
+              <select class="form-control" name="payment_mode" required>
+                <option value="">Select Payment Mode</option>
+                <option value="cash">Cash</option>
+                <option value="online">Online</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div class="d-flex gap-2">
+                <button class="btn btn-success" type="submit">Send & Print</button>
+                <button class="btn btn-secondary" type="reset">Clear</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body></html>
