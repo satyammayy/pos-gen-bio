@@ -169,9 +169,18 @@
 
           <!-- ======  MERGED ROW  ====== -->
           <tr>
-            <td>Shift / Payment Mode:</td>
+            <td>Shift / Payment Mode:</td>
             <td>
-              <span id="shift">-</span> / <span id="paymentMode">-</span>
+              <span id="shift">-</span> / <span id="paymentMode">-</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Payment Status:</td>
+            <td>
+              <span id="paymentStatus">-</span>
+              <span id="dueAmountInfo" style="display: none;">
+                (Due Amount: ₹<span id="dueAmount">-</span>)
+              </span>
             </td>
           </tr>
         </tbody>
@@ -218,6 +227,17 @@
     document.getElementById("shift").textContent       = params.get("shift")        || "-";
     document.getElementById("paymentMode").textContent = params.get("payment_mode") || "-";
     document.getElementById("regDate").textContent     = new Date().toLocaleDateString("en-IN");
+
+    // Handle payment status and due amount
+    const paymentStatus = params.get('payment_status');
+    document.getElementById('paymentStatus').textContent = 
+      paymentStatus === 'full' ? 'Full Payment' : 'Partial Payment';
+    
+    if (paymentStatus === 'partial') {
+      const dueAmount = params.get('due_amount');
+      document.getElementById('dueAmount').textContent = dueAmount;
+      document.getElementById('dueAmountInfo').style.display = 'inline';
+    }
 
     // Auto‑print when ?print=true
     window.onload = () => {

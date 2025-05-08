@@ -129,6 +129,29 @@
             </td>
           </tr>
           <tr>
+            <td class="align-middle"><label class="form-label mb-0">Payment Status</label></td>
+            <td>
+              <select class="form-control" name="payment_status" id="paymentStatus" required>
+                <option value="">Select Payment Status</option>
+                <option value="full">Full Payment</option>
+                <option value="partial">Partial Payment</option>
+              </select>
+            </td>
+          </tr>
+          <tr id="dueAmountRow" style="display: none;">
+            <td class="align-middle"><label class="form-label mb-0">Due Amount</label></td>
+            <td><input class="form-control" type="number" name="due_amount" min="0"></td>
+          </tr>
+          <tr>
+            <td class="align-middle"><label class="form-label mb-0">Send WhatsApp</label></td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="send_whatsapp" id="sendWhatsapp" checked>
+                <label class="form-check-label" for="sendWhatsapp">Send registration details via WhatsApp</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <div class="d-flex gap-2">
