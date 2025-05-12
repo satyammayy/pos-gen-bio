@@ -171,7 +171,7 @@
           <tr>
             <td>Shift / Payment Mode:</td>
             <td>
-              <span id="shift">-</span> / <span id="paymentMode">-</span>
+              <span id="shift">-</span> / <span id="paymentMode">-</span><span id="concessionAmountInfo" style="display: none;"> (₹<span id="concessionAmount">-</span>)</span>
             </td>
           </tr>
           <tr>
@@ -225,9 +225,18 @@
     document.getElementById("father").textContent      = params.get("father")       || "-";
     document.getElementById("address").textContent     = params.get("address")      || "-";
     document.getElementById("shift").textContent       = params.get("shift")        || "-";
-    document.getElementById("paymentMode").textContent = params.get("payment_mode") || "-";
     document.getElementById("regDate").textContent     = new Date().toLocaleDateString("en-IN");
 
+    // Handle payment mode and concession amount
+    const paymentMode = params.get('payment_mode') || "-";
+    const concessionAmount = params.get('concession_amount');
+    
+    if (paymentMode === 'concession' && concessionAmount) {
+      document.getElementById('paymentMode').textContent = `Concession (₹${concessionAmount})`;
+    } else {
+      document.getElementById('paymentMode').textContent = paymentMode;
+    }
+    
     // Handle payment status and due amount
     const paymentStatus = params.get('payment_status');
     document.getElementById('paymentStatus').textContent = 

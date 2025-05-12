@@ -121,10 +121,11 @@
           <tr>
             <td class="align-middle"><label class="form-label mb-0">Payment Mode</label></td>
             <td>
-              <select class="form-control" name="payment_mode" required>
+              <select class="form-control" name="payment_mode" id="paymentMode" required>
                 <option value="">Select Payment Mode</option>
                 <option value="cash">Cash</option>
                 <option value="online">Online</option>
+                <option value="concession">Concession</option>
               </select>
             </td>
           </tr>
@@ -137,6 +138,10 @@
                 <option value="partial">Partial Payment</option>
               </select>
             </td>
+          </tr>
+          <tr id="concessionAmountRow" style="display: none;">
+            <td class="align-middle"><label class="form-label mb-0">Concession Amount</label></td>
+            <td><input class="form-control" type="number" name="concession_amount" min="0"></td>
           </tr>
           <tr id="dueAmountRow" style="display: none;">
             <td class="align-middle"><label class="form-label mb-0">Due Amount</label></td>

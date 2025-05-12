@@ -13,7 +13,7 @@ const SHEET_ID = process.env.SHEET_ID;
 async function appendRow(values) {
   await sheets.spreadsheets.values.append({
     spreadsheetId: SHEET_ID,
-    range: 'A:F',
+    range: 'A:L',  // Extended range to include all fields
     valueInputOption: 'USER_ENTERED',
     requestBody: { values: [values] },
   });

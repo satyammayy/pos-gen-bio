@@ -19,10 +19,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/register', async (req, res) => {
   try {
-    const { form_no, name, dob, phone, address, father, shift, payment_mode, payment_status, due_amount, send_whatsapp } = req.body;
+    const { form_no, name, dob, phone, address, father, shift, payment_mode, payment_status, due_amount, concession_amount, send_whatsapp } = req.body;
     const id = form_no;  // Use the form number as ID
     // 1. store to Sheets
-    await appendRow([id, name, dob, phone, address, father, shift, payment_mode, payment_status, due_amount || 0, new Date().toLocaleString('en-IN')]);
+    await appendRow([id, name, dob, phone, address, father, shift, payment_mode, payment_status, due_amount || 0, concession_amount || 0, new Date().toLocaleString('en-IN')]);
     // 2. send WhatsApp link only if requested
     if (send_whatsapp) {
       await sendJoinLink(phone, name, id, shift, payment_mode);

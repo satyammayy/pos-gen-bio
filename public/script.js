@@ -1,3 +1,21 @@
+// Handle payment mode changes
+document.getElementById('paymentMode').addEventListener('change', e => {
+  const paymentStatus = document.getElementById('paymentStatus');
+  const concessionAmountRow = document.getElementById('concessionAmountRow');
+  
+  if (e.target.value === 'concession') {
+    concessionAmountRow.style.display = 'table-row';
+    paymentStatus.value = '';
+    paymentStatus.disabled = false;
+  } else {
+    concessionAmountRow.style.display = 'none';
+    paymentStatus.disabled = false;
+  }
+  
+  // Trigger payment status change event to update due amount field
+  paymentStatus.dispatchEvent(new Event('change'));
+});
+
 // Show/hide due amount field based on payment status
 document.getElementById('paymentStatus').addEventListener('change', e => {
   const dueAmountRow = document.getElementById('dueAmountRow');
